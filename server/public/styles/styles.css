@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --primary-color: #2fa4ff;
+  --white-color: #ffff;
+  --pink-color: #ffbde6;
+  --blue-color: #0e3eda;
+}
+
+.login-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-bg {
+  background: var(--primary-color);
+}
+
+.login-card {
+  transform: translateY(-50px) translateX(-10px);
+  position: absolute;
+  width: 50%;
+  height: 600px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+  background: var(--white-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.login-header {
+  width: 100%;
+  height: 5%;
+  background: var(--blue-color);
+  border-radius: 10px 10px 0px 0px;
+}
+
+.login-card-body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-card {
+  transform: translateY(-50px) translateX(500px);
+  position: absolute;
+  width: 50%;
+  height: 600px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+  background: blue;
+  border-radius: 10px;
+}
+
+.card-bg {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: var(--white-color);
+}
+
+.active {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.login-info {
+}
+
+.signup-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.appear-left {
+  animation: appear-left 1.2s ease-in both;
+}
+
+.appear-right {
+  animation: appear-right 1.2s ease-in both;
+}
+
+.fade {
+  animation: fade 1.2s ease-in-out both;
+}
+.appear-delayed {
+  animation: fade 1.2s ease-in-out both;
+}
+
+.disappear{
+    animation: disappear 0.5s ease-in-out both;
+}
+
+.translate-right {
+  animation: translate-right 1.2s ease-in-out both;
+}
+
+.display-none{
+    display: none;
+}
+
+.display-flex{
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }  
+}
+
+@keyframes appear-left {
+  from {
+    margin-left: 500px;
+  }
+  to {
+    margin-left: 0px;
+  }
+}
+
+@keyframes translate-right {
+  from {
+    margin-right: 0px;
+  }
+  to {
+    margin-left: 500px;
+  }
+}
+
+@keyframes appear-right {
+  from {
+    margin-right: 300px;
+    transform: translateY(-50px) translateX(-800px);
+  }
+  to {
+    transform: translateY(-50px) translateX(500px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

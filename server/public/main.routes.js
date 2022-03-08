@@ -1,7 +1,7 @@
 (() => {
   angular.module("mainModule").config(($routeProvider) => {
     $routeProvider.when("/", {
-      template: "<h1>MAIN ROUTE</h1>",
+      templateUrl: "./app/login/login.html",
     });
   });
 })();
