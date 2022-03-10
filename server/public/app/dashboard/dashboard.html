@@ -1,0 +1,89 @@
+<div ng-app="dashboardModule">
+  <div ng-controller="mainCtrl">
+    <!-- TOOLBAR -->
+    <div ng-controller="toolBar">
+      <md-toolbar class="md-accent" md-scroll-shrink ng-if="true">
+        <div class="md-toolbar-tools">
+          <h3 ng-click="openSideNav();" class="cursor-pointer">
+            <span class="text-white text-extrabold">UAT FORMS</span>
+          </h3>
+        </div>
+      </md-toolbar>
+      <!-- TOOLBAR -->
+
+      <!-- SIDEBAR -->
+
+      <md-sidenav
+        class="md-sidenav-left md-whiteframe-4dp sidenav-content"
+        md-component-id="sidenavLeft"
+      >
+        <md-toolbar class="md-theme-light md-accent">
+          <div class="flex items-center">
+            <img
+              class="w-10 h-10 rounded-full"
+              src="./../../assets/uat-solo-chico-blanco.png"
+              alt="Logo Uat"
+            />
+            <h1 style="color: white" class="md-toolbar-tools">Menu</h1>
+          </div>
+        </md-toolbar>
+
+        <md-content class="mt-5 sidenav-content">
+          <md-list flex layout-align="center" layout="column">
+            <md-list-item class="md-3-line">
+              <div
+                ng-click="onNavigateMain();"
+                class="flex gap-3 p-3 items center cursor-pointer sidenav-item"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="./../../assets/admin.png"
+                  alt="Form Ico"
+                />
+                <span class="text-lg">Dashboard</span>
+              </div>
+            </md-list-item>
+
+            <md-list-item class="md-3-line">
+              <div
+                ng-click="onNavigateCreateGroup();"
+                class="flex gap-3 p-3 items center cursor-pointer sidenav-item"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="./../../assets/team.png"
+                  alt="Form Ico"
+                />
+                <span class="text-lg">Create A Group</span>
+              </div>
+            </md-list-item>
+
+            <md-list-item class="md-3-line">
+              <div
+                ng-click="onNavigateCreateForm();"
+                class="flex gap-3 p-3 items center cursor-pointer sidenav-item"
+              >
+                <img
+                  class="w-6 h-6"
+                  src="./../../assets/google-forms.png"
+                  alt="Form Ico"
+                />
+                <span class="text-lg">Create A New Form</span>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-sidenav>
+
+      <!-- SIDEBAR -->
+    </div>
+
+    <!-- CHILD VIEWS -->
+    <div ng-switch on="page">
+      <div ng-switch-when="main"><main></main></div>
+      <div ng-switch-when="create-form"><newform></newform></div>
+      <div ng-switch-when="create-group"><groups></groups></div>
+    </div>
+    <!-- CHILD VIEWS -->
+  </div>
+</div>

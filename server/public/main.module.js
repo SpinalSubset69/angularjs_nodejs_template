@@ -1,6 +1,6 @@
 (() => {
   angular
-    .module("mainModule", ["ngRoute", "ngMaterial"])
+    .module("mainModule", ["ngRoute", "ngMaterial", "dashboardModule"])
     .config(($mdThemingProvider) => {
       $mdThemingProvider
         .theme("default")

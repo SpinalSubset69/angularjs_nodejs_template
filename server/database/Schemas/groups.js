@@ -9,4 +9,4 @@ const groupsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = new mongoose.model("gorups", groupsSchema);
+module.exports = new mongoose.model("groups", groupsSchema);

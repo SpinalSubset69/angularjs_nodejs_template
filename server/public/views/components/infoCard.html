@@ -1,0 +1,28 @@
+<div class="flex-column w-3/4 bg-white rounded-md shadow-lg p-3">
+  <h1 class="text-2xl font-bold">Forms Statistics</h1>
+  <div class="">
+    <div class="flex justify-between w-3/4 ml-10">
+      <div class="lg">Total Forms Answered:</div>
+      <span class="text-lg font-bold">{{ $ctrl.statistics.total_forms }}</span>
+    </div>
+
+    <div class="flex justify-between w-3/4 ml-10">
+      <div class="lg">Total Grade:</div>
+      <span class="text-lg font-bold">{{ $ctrl.statistics.total_grade }}</span>
+    </div>
+
+    <div class="flex justify-between w-3/4 ml-10">
+      <div class="lg">Total Approved:</div>
+      <span class="text-lg font-bold"
+        >{{ $ctrl.statistics.total_approved }}</span
+      >
+    </div>
+
+    <div class="flex justify-between w-3/4 ml-10">
+      <div class="lg">Total Not Approved:</div>
+      <span class="text-lg font-bold"
+        >{{ $ctrl.statistics.total_not_approved }}</span
+      >
+    </div>
+  </div>
+</div>

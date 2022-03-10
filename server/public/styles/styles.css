@@ -5,10 +5,12 @@
 }
 
 :root {
-  --primary-color: #2fa4ff;
+  --primary-color: #151d3b;
   --white-color: #ffff;
   --pink-color: #ffbde6;
   --blue-color: #0e3eda;
+  --red-color: #d82148;
+  --accent-red: #151d3b;
 }
 
 .login-wrapper {
@@ -17,9 +19,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.login-bg {
   background: var(--primary-color);
 }
 
@@ -39,7 +38,7 @@
 .login-header {
   width: 100%;
   height: 5%;
-  background: var(--blue-color);
+  background: var(--red-color);
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -121,30 +120,68 @@
   animation: fade 1.2s ease-in-out both;
 }
 
-.disappear{
-    animation: disappear 0.5s ease-in-out both;
+.disappear {
+  animation: disappear 0.5s ease-in-out both;
 }
 
 .translate-right {
   animation: translate-right 1.2s ease-in-out both;
 }
 
-.display-none{
-    display: none;
+.display-none {
+  display: none;
 }
 
-.display-flex{
-    display: flex;
-    flex-direction: column;
+.display-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.change-bg-red {
+  animation: change-bg-to-red 1.2s ease both;
+}
+
+.change-bg-accent-red {
+  animation: change-bg-to-accent-red 1.2s ease both;
+}
+
+.change-bg-blue {
+  animation: change-bg-to-blue 1.2s ease both;
+}
+
+.change-bg-accent-blue {
+  animation: change-bg-to-accent-blue 1.2s ease both;
+}
+
+.to-blue {
+  background: var(--primary-color);
+  transition: all 1.2s ease;
+}
+
+.sidenav-content {
+  background: var(--primary-color);
+}
+
+.sidenav-item {
+  background: var(--white-color);
+  border-radius: 10px;
+}
+
+.sidenav-item:hover {
+  transform: translateX(10px);
+  background: var(--red-color);
+  color: white;
+  border-radius: 10px;
+  transition: all 0.6s ease-out;
 }
 
 @keyframes disappear {
-    from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }  
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes appear-left {
@@ -172,6 +209,42 @@
   }
   to {
     transform: translateY(-50px) translateX(500px);
+  }
+}
+
+@keyframes change-bg-to-red {
+  from {
+    background: var(--primary-color);
+  }
+  to {
+    background: var(--red-color);
+  }
+}
+
+@keyframes change-bg-to-accent-red {
+  from {
+    background: var(--blue-color);
+  }
+  to {
+    background: var(--accent-red);
+  }
+}
+
+@keyframes change-bg-to-blue {
+  from {
+    background: var(--red-color);
+  }
+  to {
+    background: var(--primary-color);
+  }
+}
+
+@keyframes change-bg-to-accent-blue {
+  from {
+    background: var(--red-accent);
+  }
+  to {
+    background: var(--blue-color);
   }
 }
 

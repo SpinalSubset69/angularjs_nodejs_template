@@ -1,0 +1,106 @@
+<div id="auth-bg" class="login-wrapper" ng-controller="authController">
+  <div class="card-bg">
+    <div id="login-card" class="login-card appear-left">
+      <div id="auth-header" class="login-header"></div>
+
+      <div class="login-card-body">
+        <md-content
+          id="signing-content"
+          style="background: white"
+          layout-padding
+          class="display-none"
+        >
+          <div class="mat-typography">
+            <h3>Sign In Into Your Account</h3>
+          </div>
+
+          <md-input-container class="md-block">
+            <label>Email:</label>
+            <input type="email" ng-model="user.email" />
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Password:</label>
+            <input type="password" ng-model="user.password" />
+          </md-input-container>
+
+          <md-button
+            style="color: white"
+            class="md-raised md-primary"
+            ng-click="login();"
+            >Sign In</md-button
+          >
+        </md-content>
+
+        <form ng-submit="signUp();">
+          <md-content
+            id="signup-content"
+            class="fade"
+            style="background: white"
+            layout-padding
+          >
+            <div class="mat-typography">
+              <p>Fill this form to create an account</p>
+            </div>
+
+            <md-input-container class="md-block">
+              <label>Full Name:</label>
+              <input ng-model="user.user_name" />
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <label>Email:</label>
+              <input type="email" ng-model="user.email" />
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <label>Phone Number:</label>
+              <input ng-model="user.phone_number" />
+            </md-input-container>
+
+            <md-input-container class="md-block">
+              <label>Password:</label>
+              <input type="password" ng-model="user.password" />
+            </md-input-container>
+
+            <md-input-container class="flex w-full justify-center">
+              <md-button
+                type="submit"
+                style="color: white"
+                class="md-raised md-primary"
+                ng-click="signUp();"
+                >Sign Up</md-button
+              >
+            </md-input-container>
+          </md-content>
+        </form>
+      </div>
+    </div>
+
+    <div class="card-content">
+      <div id="login-info" class="login-info info-wrapper disappear invisible">
+        <h3>Don't Have An Account Yet? Sign Up Today!</h3>
+        <md-button
+          ng-click="slideSignup(true);"
+          style="color: white"
+          class="md-raised md-primary"
+          >Sign Up</md-button
+        >
+      </div>
+
+      <div id="signup-info" class="signup-info info-wrapper appear-delayed">
+        <div class="md-typography">
+          <h3>Have An Account? Sign In!</h3>
+        </div>
+        <md-button
+          ng-click="slideSignup(false);"
+          style="color: white"
+          class="md-raised md-primary"
+          >Sign In</md-button
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./auth.styles.js"></script>

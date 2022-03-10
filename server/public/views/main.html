@@ -1,0 +1,19 @@
+<div
+  class="h-screen w-full p-10 overflow-hidden"
+  ng-controller="mainController"  
+>
+  <!-- USER INFO AREA -->
+  <div class="w-full h-auto" ng-if="user">
+    <h1 class="text-2xl text-bold">
+      Welcome Back <strong>{{ user.user_name }}</strong>
+    </h1>
+
+    <!-- 1st CONTTENT AREA -->
+    <div class="w-full h-auto flex gap-3 justify-evenly">
+      <div class="pl-10 w-screen h-auto p-5">
+        <card statistics="statistics"></card>
+      </div>
+      <div class=" w-full h-auto bg-red-600 p-5">Adios</div>
+    </div>
+  </div>
+</div>

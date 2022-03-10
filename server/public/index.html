@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/angular-material.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/scrollbar.css" />
     <title>Document</title>
   </head>
   <body ng-app="mainModule">
@@ -20,6 +25,20 @@
     <script src="./scripts/angular-material.js"></script>
     <script src="./main.module.js"></script>
     <script src="./main.routes.js"></script>
-    <script src="./app/login/login.ctrl.js"></script>
+    <script src="./app/login/auth.ctrl.js"></script>
+    <script src="./app/login/auth.fac.js"></script>
+    <script src="./app/login/auth.styles.js"></script>
+    <script src="./token.fac.js"></script>
+
+    <!-- DASHBOARD -->
+    <script src="./app/dashboard/dashboard.module.js"></script>
+    <script src="./app/dashboard/main/main.ctrl.js"></script>
+    <script src="./app/dashboard/main/main.js"></script>
+    <script src="./app/dashboard/create-form/createForm.js"></script>
+    <script src="./app/dashboard/dashboard.routes.js"></script>
+    <script src="./app/dashboard/components/toolbar.ctrl.js"></script>
+    <script src="./app/dashboard/create-group/create-group.js"></script>
+    <script src="./app/dashboard/users.service.js"></script>
+    <script src="./app/dashboard/components/info.card.js"></script>
   </body>
 </html>
