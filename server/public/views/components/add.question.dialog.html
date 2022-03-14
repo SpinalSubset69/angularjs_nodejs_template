@@ -1,0 +1,57 @@
+<md-dialog class="w-2/4 h-1/4 shadow-lg rounded-md">
+  <md-toolbar class="md-accent">
+    <div class="md-toolbar-tools">
+      <h1 style="color: white">New Question</h1>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content>
+    <div class="md-dialog-content">
+      <md-content class="w-full bg-white" flex layout="column">
+        <md-input-container class="text-lg">
+          <label>Question</label>
+          <input ng-change="onInputChanges();" ng-model="question.question" />
+        </md-input-container>
+
+        <md-content
+          id="answers"
+          class="w-full bg-white"
+          flex
+          layout="column"
+        ></md-content>
+
+        <div
+          ng-click="addAnswer();"
+          class="flex items-center w-full cursor-pointer add-question mb-3"
+        >
+          <img src="./../assets/plus.png" class="h-8 w-8" alt="" />
+          <span class="text-lg ml-2">Add a Answer</span>
+        </div>
+
+        <md-input-container class="text-lg">
+          <label>Correct Answer:</label>
+          <input
+            ng-change="onInputChanges();"
+            ng-model="question.correct_answer"
+          />
+        </md-input-container>
+
+        <div class="flex w-full justify-end gap-4">
+          <md-button
+            ng-click="cancel();"
+            style="color: white"
+            class="md-raised md-warn"
+            >Cancel</md-button
+          >
+          <md-button
+            ng-click="onAddAnswer();"
+            style="color: white"
+            class="md-raised md-primary"
+            ng-disabled=" ableToAddQuestion"
+            >Add</md-button
+          >
+        </div>
+      </md-content>
+    </div>
+  </md-dialog-content>
+</md-dialog>

@@ -2,8 +2,8 @@
   angular
     .module("dashboardModule", ["ngRoute", "ngMaterial"])
     .controller("mainCtrl", ctrl);
-  ctrl.$inject = ["$rootScope", "$childNavigate", "$usersApi"];
-  function ctrl($rootScope, $childNavigate, $usersApi) {
+  ctrl.$inject = ["$rootScope", "$childNavigate", "$usersApi", "$scope"];
+  function ctrl($rootScope, $childNavigate, $usersApi, $scope) {
     $rootScope.page = $childNavigate.getLastSessionPage();
 
     //GET CURRENT USER

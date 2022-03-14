@@ -1,1 +1,190 @@
-<h1>HOLA a todos</h1>
+<div class="w-full h-auto p-5" ng-cloak ng-controller="createFormController">
+  <div class="w-full">
+    <h1 class="text-2xl font-bold">Create A New Form</h1>
+  </div>
+  <md-content class="md-padding">
+    <md-nav-bar
+      md-selected-nav-item="currentNavItem"
+      nav-bar-aria-label="navigation links"
+    >
+      <md-nav-item
+        md-nav-click="goto('summary');"
+        name="summary"
+        ng-disabled="status.summary"
+      >
+        Summary
+      </md-nav-item>
+
+      <md-nav-item
+        md-nav-click="goto('questions');"
+        name="questions"
+        ng-disabled="status.questions"
+      >
+        Questions
+      </md-nav-item>
+
+      <md-nav-item
+        md-nav-click="goto('group');"
+        name="group"
+        ng-disabled="status.group"
+      >
+        Group
+      </md-nav-item>
+    </md-nav-bar>
+  </md-content>
+</div>
+
+<div ng-if="!steper" class="w-screen h-auto flex justify-center">
+  <div
+    id="beginForm"
+    class="slide-right flex flex-col justify-center items-center"
+  >
+    <div class="flex items-center">
+      <img
+        class="h-20 w-20"
+        src="./../assets/google-forms.png"
+        alt="Form Ico"
+      />
+      <h1 class="text-2xl font-bold">Create a new Form</h1>
+    </div>
+    <div class="flex flex-col w-full text-center mt-5 justify-center">
+      <p class="text-lg">
+        To create a new form, first, you must fill out a little form in order to
+        put all the questions you want. <br />
+        Here, an explanation of each section in the follow steper:
+      </p>
+      <md-list>
+        <li>Summary: A litle brief about what the form is</li>
+        <li>Questions: You can add as much questions as you desire</li>
+        <li>Group: Select the group(s) you want to send the form</li>
+        <li>
+          Send Form: A little reminder in case you forgot something :) we got
+          you cover
+        </li>
+      </md-list>
+    </div>
+    <md-button
+      style="color: white"
+      ng-click="startStepper();"
+      class="w-1/5 m-auto mt-10 md-raised md-warn"
+      >Lets Start</md-button
+    >
+  </div>
+</div>
+
+<div ng-switch on="steper">
+  <!-- SUMMARY AREA -->
+  <div ng-switch-when="summary" class="w-full flex justify-center">
+    <div class="w-2/4 slide-right">
+      <md-content class="p-5" flex layout="column">
+        <h1 class="mb-5">Form Summary:</h1>
+        <md-input-container class="text-2xl">
+          <label>Form Title</label>
+          <input
+            ng-change="onSummaryChange();"
+            type="tex"
+            ng-model="form.title"
+          />
+        </md-input-container>
+
+        <md-input-container class="text-2xl">
+          <label>Form Summary</label>
+          <input
+            ng-change="onSummaryChange();"
+            type="tex"
+            ng-model="form.summary"
+          />
+        </md-input-container>
+
+        <md-input-container class="text-2xl">
+          <label>Form Instructions:</label>
+          <input
+            ng-change="onSummaryChange();"
+            type="tex"
+            ng-model="form.instructions"
+          />
+        </md-input-container>
+
+        <div class="w-full flex justify-end">
+          <md-button
+            ng-click="navigation('questions');"
+            style="color: white"
+            class="md-raised md-warn"
+            ng-disabled="status.progress.questions"
+            >Questions</md-button
+          >
+        </div>
+      </md-content>
+    </div>
+  </div>
+  <!-- SUMMARY AREA -->
+
+  <!-- QUESTIONS AREA -->
+  <div ng-switch-when="questions" class="w-full flex justify-center">
+    <div class="w-2/4 slide-right">
+      <md-content class="p-5 w-full" flex layout="column">
+        <!-- QUESTIONS -->
+        <div
+          class="p-3 mb-5 shadow-lg rounded-md"
+          ng-if="form.questions"
+          ng-repeat="question in form.questions"
+        >
+          <div class="w-full text-center">
+            <h1 class="text-lg font-bold">Question</h1>
+          </div>
+          <span class="text-xl w-full text-center"
+            >{{ question.question }}</span
+          >
+
+          <div class="w-full text-center">
+            <h1 class="text-lg font-bold">Respuestas</h1>
+          </div>
+
+          <div class="flex flex-wrap gap-2 mb-2">
+            <div ng-repeat="answer in question.answers">
+              <span class="text-xl">{{ answer }}</span>
+            </div>
+          </div>
+          <div>
+            Correct Answer:
+            <span class="text-xl font-bold">{{ question.correct_answer }}</span>
+          </div>
+          <div class="w-full flex justify-end">
+            <md-button style="color: white" class="md-raised md-primary"
+              >Edit</md-button
+            >
+            <md-button style="color: white" class="md-raised md-warn"
+              >Delete</md-button
+            >
+          </div>
+        </div>
+        <!-- QUESTIONS -->
+        <div
+          ng-click="showCreateQuestionDialog();"
+          class="flex items-center w-full cursor-pointer add-question mb-3"
+        >
+          <img src="./../assets/plus.png" class="h-10 w-10" alt="" />
+          <span class="text-2xl ml-2">Add a Question</span>
+        </div>
+
+        <div class="w-full flex justify-between">
+          <md-button
+            ng-click="navigation('summary');"
+            style="color: white"
+            class="md-raised md-warn"
+            >Summary</md-button
+          >
+
+          <md-button
+            ng-click="navigation('group');"
+            style="color: white"
+            class="md-raised md-warn"
+            >Group</md-button
+          >
+        </div>
+      </md-content>
+    </div>
+    <!-- QUESTIONS AREA -->
+  </div>
+  <div ng-switch-when="group">Group</div>
+</div>
