@@ -137,7 +137,7 @@
           >
 
           <div class="w-full text-center">
-            <h1 class="text-lg font-bold">Respuestas</h1>
+            <h1 class="text-lg font-bold">Possible Answers</h1>
           </div>
 
           <div class="flex flex-wrap gap-2 mb-2">
@@ -179,6 +179,7 @@
             ng-click="navigation('group');"
             style="color: white"
             class="md-raised md-warn"
+            ng-disabled="form.questions.length < 1"
             >Group</md-button
           >
         </div>

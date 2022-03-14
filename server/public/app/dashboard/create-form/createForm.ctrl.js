@@ -13,6 +13,7 @@ const questionsArray = []; //Global variable to bind dialog context with createF
       group: true,
       progress: {
         questions: true,
+        group: true,
       },
     };
 
@@ -49,6 +50,7 @@ const questionsArray = []; //Global variable to bind dialog context with createF
           break;
         case "group":
           $scope.status.group = false;
+          break;
       }
       $scope.steper = page;
       $scope.currentNavItem = page;
